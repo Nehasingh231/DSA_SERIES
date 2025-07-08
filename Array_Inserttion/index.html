@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Array Insertion</h2>
+
+    <script>
+      let data = [1, 2, 3, 4, 5];
+      let position = 3;
+      let newValue = 10;
+      console.log("Before Insertion");
+      console.log(data);
+      for (let i = data.length - 1; i >= 0; i--) {
+        //    console.log(data[i])
+        if (i >= position) {
+          data[i + 1] = data[i];
+          if (i == position) {
+            data[i] = newValue;
+          }
+        }
+      }
+
+      console.log("After Insertion");
+      console.log(data);
+
+  //   *************************************************
+    // using splice method we can simply insert the element
+        // data.splice(position, 0, newValue);
+        //   console.log(data);
+
+
+
+
+
+
+
+      //    *******************************
+      function insertEl() {
+        let data = [1, 2, 3, 4, 5];
+        let position = document.getElementById("position").value;
+        let newValue = document.getElementById("newEl").value;
+        newValue = parseInt(newValue);
+
+        for (let i = data.length - 1; i >= 0; i--) {
+          if (i >= position) {
+            data[i + 1] = data[i];
+            if (i == position) {
+              data[i] = newValue;
+            }
+          }
+        }
+        console.log(data);
+       let output = document.getElementById("output");
+        output.innerHTML =JSON.stringify(data); // convert array to string
+        document.getElementById("position").value = "";
+        document.getElementById("newEl").value = "";
+       
+      }
+      
+    </script>
+
+    <input type="text" id="position" placeholder="enter position" />
+    <input type="text" id="newEl" placeholder="enter new element" />
+    <button onclick="insertEl()">Insert</button>
+    <h3>Output</h3>
+    <div id="output"></div>
+    
+    <script src=""></script>
+  </body>
+</html>
+
