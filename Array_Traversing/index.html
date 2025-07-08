@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array_Traversing</h2>
+    <script>
+        let data = [1,2,3,4,5,6,7,8,9,10];
+        for(let i = 0; i < data.length; i++){
+            document.write(data[i] + "<br>");
+        }
+        // console.log(data[4])
+
+
+
+
+// ***** *****************************
+
+
+        function getelement(){
+             let messageEl = document.getElementById("message");
+            let inputEl = document.getElementById("input").value;
+            if(inputEl < 0){
+                alert("Please enter a positive number");
+                
+            }else if(inputEl < data.length && typeof parseInt(inputEl)){
+                 messageEl.innerHTML = data[inputEl];
+            } else{
+                alert("Please enter a valid number");
+            }
+           
+           
+        }
+    </script>
+    <input type="text" id="input" placeholder="Enter a number">
+    <button id="btn" onclick="getelement()">get element</button>
+    <p id="message"></p>
+
+    <script src="examples.js"></script>
+</body>
+</html>
